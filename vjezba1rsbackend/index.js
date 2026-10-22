@@ -3,10 +3,14 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: [
+    "http://localhost:5173",
+    process.env.FRONTEND_URL
+  ].filter(Boolean)
 }));
 
 app.use(express.json());
@@ -17,6 +21,6 @@ app.get("/api/test", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
