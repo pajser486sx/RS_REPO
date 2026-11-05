@@ -16,3 +16,25 @@ async def main():
     await asyncio.gather(*timers)
 
 asyncio.run(main())
+
+## prvo se svi taskovi kreiraju u main metodi, main() je u event loopu
+## main() je suspended
+## timer 1 u event loopu, ispisuje 3 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 2 je u event loopu, ispisuje 5 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 7 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 1 je u event loopu, ispisuje 2 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 2 je u event loopu, ispisuje 4 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 6 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 1 je u event loopu, ispisuje 1 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 2 je u event loopu, ispisuje 3 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 5 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 1 je u event loopu, ispisuje "Vrijeme je isteklo!", timer 1 je gotov
+## timer 2 se probudi (u event loopu je), ispisuje 2 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 4 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 2 je u event loopu, ispisuje 1 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 3 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 2 je u event loopu, ispisuje "Vrijeme je isteklo!", timer 2 je gotov
+## timer 3 se probudi (u event loopu je), ispisuje 2 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje 1 sek, nakon 1 sekunde ide spat i suspendira se
+## kad se probudi, timer 3 je u event loopu, ispisuje "Vrijeme je isteklo!", timer 3 je gotov
+## event loop je gotov, main() se probudio i završio, oslobađaju se resursi
