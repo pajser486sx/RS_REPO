@@ -1,0 +1,29 @@
+Zadatak 1 odgovori - sekvencijalno vs konkurentno
+
+1. Koliko traje izvođenje programa pri sekvencijalnoj obradi? Zašto?
+Izvođenje pri sekvencijalnoj obradi traje cca. 6 sekundi zato jer se čeka da svaka korutina završi,
+a za svaku korutinu je postavljeno da spava 2 sekunde i ima 3 korutina, dakle 3*2 = 6 sekundi.
+
+
+2. Koliko traje izvođenje programa pri konkurentnoj jednodretvenoj obradi? Zašto?
+Izvođenje programa traje oko 2 sekunde jer sve korutine imaju sleep timer 2 sekunde, ali umjesto da se izvađaju
+jedna za drugom, izvode se konkurentno jer su u event loopu schedulane sve 3 korutine i unutra se one konkurentno
+izvršavaju.
+
+3. Koja je glavna razlika između ovih dvaju načina izvođenja? Kako se korutine izvršavaju unutar event loopa?
+Kod sekvencijalne izvedbe svaka korutina čeka da druga završi. U konkurentnoj izvedbi, korutine se izvršavaju
+unutar event loop-a konkurentno.
+
+
+4. Što se događa ako u korutinama pokušate zamijeniti asyncio.sleep sa time.sleep . Koja je tehnička razlika u
+implementaciji ovih sleep funkcija?
+time.sleep nema await opcije, pa ju nije moguće koristiti umjesto asyncio.sleep.
+Dobiva TypeError: object NoneType can't be used in 'await' expression
+
+
+5. Vraća li asyncio.gather() rezultate uvijek istim redoslijedom? Odgovara li taj redoslijed redoslijedu proslijeđenih
+korutina ili redoslijedu njihova dovršavanja?
+asyncio.gather() će dohvaćati podatke kako smo ih prosljedili. Redosljed vraćanja odgovara proslijeđenim korutinama.
+Redosljed dovršavanja će biti po redu, ovisno o vremenu sleepa. Ako prva korutina ima najmanji sleep, a treća
+najveći, prva će se izvesti prva, druga druga i treća treća. Da druga ima veći sleep od treće, treća bi bila 
+dovršena druga, a druga zadnja.
