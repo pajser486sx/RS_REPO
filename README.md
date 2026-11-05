@@ -5,5 +5,9 @@ Ovdje se stavljaju praktični i određeni tekstualni sadržaji za svaku vježbu 
 Link na frontend basic Vue aplikacije koja komunicira s backendom
 https://vjezba1.onrender.com
 
+### VJEŽBA 2 odnosno 3
+Zadaci u mapi "vjezba2ili3asyncPython" 
+https://github.com/pajser486sx/RS_REPO/tree/master/vjezba2ili3asyncPython
+
 
 to be continued...
