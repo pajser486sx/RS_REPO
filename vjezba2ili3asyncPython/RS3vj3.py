@@ -7,6 +7,12 @@ async def autentifikacija(korisnik):
   {'korisnicko_ime': 'maja_0x', 'email': 'majaaaaa@gmail.com'},
   {'korisnicko_ime': 'zdeslav032', 'email': 'deso032@gmail.com'}
 ]
+    if korisnik in [korisnik['korisnicko_ime'] for korisnik in baza_korisnika]:
+        print(f"Korisnik {korisnik} je uspješno autentificiran.")
+        return True
+    else:
+        print(f"Korisnik {korisnik} nije pronađen u bazi.")
+        return False
 
 
 async def autorizacija():
