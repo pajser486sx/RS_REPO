@@ -1,0 +1,48 @@
+{
+    "jelovnik": [
+        {
+            "id": 1,
+            "naziv": "Pizza",
+            "cijena": 8.5
+        },
+        {
+            "id": 2,
+            "naziv": "Ragu",
+            "cijena": 10.0
+        },
+        {
+            "id": 3,
+            "naziv": "Lasagne",
+            "cijena": 12.0
+        },
+        {
+            "id": 4,
+            "naziv": "Rižoto",
+            "cijena": 9.5
+        }
+    ],
+    "recenzije": [
+        {
+            "id": 1,
+            "ime": "Ivan",
+            "ocjena": 5,
+            "komentar": "Odlično!"
+        },
+        {
+            "id": 2,
+            "ime": "Ana",
+            "ocjena": 4,
+            "komentar": "Dobar izbor jela."
+        }
+    ],
+    "stolovi": [
+        {
+            "oznaka": "43",
+            "broj_mjesta": 4
+        },
+        {
+            "oznaka": "65",
+            "broj_mjesta": 2
+        }
+    ]
+}

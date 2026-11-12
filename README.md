@@ -5,9 +5,11 @@ Ovdje se stavljaju praktični i određeni tekstualni sadržaji za svaku vježbu 
 Link na frontend basic Vue aplikacije koja komunicira s backendom
 https://vjezba1.onrender.com
 
-### VJEŽBA 2 odnosno 3
+### VJEŽBA 2 odnosno 3 (2.5)
 Zadaci u mapi "vjezba2ili3asyncPython" 
 https://github.com/pajser486sx/RS_REPO/tree/master/vjezba2ili3asyncPython
 
+### VJEŽBA 3
+Nadogradnja frontenda i povlačenje podataka iz podaci.json kojeg generira Vjezba3Python/pripremaPodataka.py
+- Postojeći javni URL frontenda: https://vjezba1.onrender.com
 
-to be continued...
