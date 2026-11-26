@@ -57,3 +57,6 @@ Naknadno uspješni: 2
 Konačno uspješni: 142
 Konačno odbijeni: 0
 Konačne mrežne greške: 18
+
+## ZADATAK 3:
+Koliko različitih studenata može istovremeno obrađivati poslužitelj? 5 STUDENATA!
